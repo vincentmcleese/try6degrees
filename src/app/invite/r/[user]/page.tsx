@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import Image from "next/image";
 import ScoreCard from "@/components/score-card";
@@ -21,7 +21,22 @@ const data = [
   },
 ];
 
-export default function Home() {
+const logos = [
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+  "/6degrees_black.png",
+];
+
+export default async function Home({ params }: { params: any }) {
+  const { user } = params;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -34,11 +49,47 @@ export default function Home() {
           />
         </div>
       </div>
-
-      <div className="w-full max-w-5xl mt-8 text-center">
-        <h2 className="text-2xl font-bold">Enter Platform</h2>
+      <div className="w-full max-w-5xl mt-24 sm:mt-16 text-center">
+        <h1 className=" lg:text-6xl text-4xl font-bold animate-fadeIn">
+          <span className="text-[#FF5700]">
+            {user.charAt(0).toUpperCase() + user.slice(1)}
+          </span>
+          , you&lsquo;re Invited.
+        </h1>
+        <p className="mt-4 text-lg animate-fadeIn">
+          6degrees recognizes &amp; rewards Redditors for their authentic voice.
+        </p>
+      </div>
+      <div className="flex flex-col lg:flex-row w-full max-w-5xl mt-8 space-y-4 lg:space-y-0 lg:space-x-4">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="flex-1 bg-gray-200 p-4 rounded-lg border border-[#FF5700]"
+          >
+            <ScoreCard data={item} index={index} />
+          </div>
+        ))}
       </div>
 
+      <div className="w-full max-w-5xl mt-8 text-center">
+        <h2 className="text-2xl font-bold">
+          Unlock tailored rewards worth thousands of dollars from your top
+          subreddit
+        </h2>
+      </div>
+      <div className="overflow-hidden relative w-screen">
+        <div className="flex animate-scroll">
+          {logos.map((logo, index) => (
+            <div key={index} className="flex-shrink-0 w-40 h-40 m-4">
+              <img
+                src={logo}
+                alt={`Logo ${index}`}
+                className="object-contain w-full h-full"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="w-full max-w-5xl mt-8 p-4 bg-black rounded-lg text-white">
         <p>This is a placeholder for the form that will be added later.</p>
         <p>This is a placeholder for the form that will be added later.</p>
