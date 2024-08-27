@@ -17,7 +17,7 @@ const data = [
   {
     title: "6degrees Status",
     loaddelay: 9000,
-    result: "Advocate",
+    result: "Level 2",
   },
 ];
 
@@ -40,12 +40,13 @@ export default async function Home({ params }: { params: any }) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <div className="fixed left-0 top-0 flex w-full justify-center border border-[#FF5700] bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <div className="fixed left-0 top-0 flex w-full justify-center border border-gray-200 sm:border-[#FF5700] bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+          {" "}
           <Image
             src="/6degrees_black.png"
             alt="6 Degrees Logo"
-            width={150} // Adjust the width as needed
-            height={50} // Adjust the height as needed
+            width={150}
+            height={50}
           />
         </div>
       </div>
@@ -57,10 +58,11 @@ export default async function Home({ params }: { params: any }) {
           , you&lsquo;re Invited.
         </h1>
         <p className="mt-4 text-lg animate-fadeIn">
-          6degrees recognizes &amp; rewards Redditors for their authentic voice.
+          You are invited because you have been recongized for your authentic
+          content on Reddit.
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row w-full max-w-5xl mt-8 space-y-4 lg:space-y-0 lg:space-x-4">
+      <div className="flex flex-col lg:flex-row w-full max-w-5xl mt-12 space-y-4 lg:space-y-0 lg:space-x-4">
         {data.map((item, index) => (
           <div
             key={index}
@@ -71,7 +73,7 @@ export default async function Home({ params }: { params: any }) {
         ))}
       </div>
 
-      <div className="w-full max-w-5xl mt-8 text-center">
+      <div className="w-full max-w-5xl mt-12 text-center">
         <h2 className="text-2xl font-bold">
           Unlock tailored rewards worth thousands of dollars from your top
           subreddit

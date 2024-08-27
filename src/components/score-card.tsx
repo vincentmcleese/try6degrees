@@ -60,7 +60,9 @@ export default function ScoreCard({ data, index }: ScoreCardProps) {
             size="lg"
           />
         ) : (
-          <p className="text-base md:text-lg text-[#FF5700]">{data.result}</p>
+          <p className="text-base lg:text-2xl md:text-lg text-[#FF5700] font-bold animate-fadeIn">
+            {data.result}
+          </p>
         )}
       </CardBody>
     </Card>
