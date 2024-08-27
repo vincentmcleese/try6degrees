@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import ScoreCard from "@/components/score-card";
+import { Input, Button, Card } from "@nextui-org/react";
+import Link from "next/link";
 
 const data = [
   {
@@ -43,7 +45,7 @@ export default async function Home({ params }: { params: any }) {
         <div className="fixed left-0 top-0 flex w-full justify-center border border-gray-200 sm:border-[#FF5700] bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           {" "}
           <Image
-            src="/6degrees_black.png"
+            src="/PrimaryLogo_1.svg"
             alt="6 Degrees Logo"
             width={150}
             height={50}
@@ -92,15 +94,26 @@ export default async function Home({ params }: { params: any }) {
           ))}
         </div>
       </div>
-      <div className="w-full max-w-5xl mt-8 p-4 bg-black rounded-lg text-white">
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
-        <p>This is a placeholder for the form that will be added later.</p>
+      <div className="w-full max-w-5xl mt-8 p-4  bg-gray-200 p-4 rounded-lg border border-[#FF5700]">
+        <Card>
+          <p className="mt-4 text-lg animate-fadeIn">
+            How can we best notify you about future rewards?
+          </p>
+          <form className="w-full mt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-4">
+              <Input className="flex-grow" placeholder="Enter your email" />
+              <Link href={`./invite/r/${user}/rewards`}>
+                {" "}
+                <Button
+                  radius="full"
+                  className="bg-reddit-orange text-white w-full sm:w-auto lg:w-48"
+                >
+                  Enter 6degrees
+                </Button>
+              </Link>
+            </div>
+          </form>
+        </Card>
       </div>
     </main>
   );

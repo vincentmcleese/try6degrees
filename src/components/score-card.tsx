@@ -40,12 +40,7 @@ export default function ScoreCard({ data, index }: ScoreCardProps) {
   return (
     <Card>
       <CardHeader className="flex gap-3">
-        <Image
-          alt="nextui logo"
-          height={40}
-          src="/6degrees_black.png"
-          width={40}
-        />
+        <Image alt="nextui logo" height={40} src="/Icon_1.svg" width={40} />
         <div className="flex flex-col">
           <p className="text-md">{data.title}</p>
         </div>
