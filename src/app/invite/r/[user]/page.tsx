@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ScoreCard from "@/components/score-card";
+import EntryForm from "@/components/entry-form";
 import { Input, Button, Card } from "@nextui-org/react";
 import Link from "next/link";
 
@@ -95,25 +96,7 @@ export default async function Home({ params }: { params: any }) {
         </div>
       </div>
       <div className="w-full max-w-5xl mt-8 p-4  bg-gray-200 p-4 rounded-lg border border-[#FF5700]">
-        <Card>
-          <p className="mt-4 text-lg animate-fadeIn">
-            How can we best notify you about future rewards?
-          </p>
-          <form className="w-full mt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-4">
-              <Input className="flex-grow" placeholder="Enter your email" />
-              <Link href={`./invite/r/${user}/rewards`}>
-                {" "}
-                <Button
-                  radius="full"
-                  className="bg-reddit-orange text-white w-full sm:w-auto lg:w-48"
-                >
-                  Enter 6degrees
-                </Button>
-              </Link>
-            </div>
-          </form>
-        </Card>
+        <EntryForm />
       </div>
     </main>
   );

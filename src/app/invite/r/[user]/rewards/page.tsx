@@ -1,28 +1,17 @@
 "use client";
 
-import {
-  CircularProgress,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Button,
-  ButtonGroup,
-  Tabs,
-  Tab,
-  Divider,
-} from "@nextui-org/react";
+import { Button, ButtonGroup } from "@nextui-org/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import Image from "next/image";
-import ScoreCard from "@/components/score-card";
+import RewardCard from "@/components/reward-card";
 
 export default function Rewards() {
   const [selectedStatus, setSelectedStatus] = useState("1");
   const filteredData = data.filter((item) => item.status === selectedStatus);
   const notify = () =>
-    toast("This is a product Alpha. We will notify you once we're live!");
+    toast("This is a demo. We will notify you once we're live!");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-24">
@@ -52,28 +41,7 @@ export default function Rewards() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 w-full max-w-5xl">
         {filteredData.map((item, index) => (
           <div key={index} onClick={notify}>
-            <Card className="bg-white shadow-lg rounded-lg" isHoverable={true}>
-              <CardHeader className="font-bold text-lg">
-                {item.title}
-              </CardHeader>
-              <Divider />
-              <CardBody>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={300}
-                  height={200}
-                  className="rounded-lg"
-                />
-                <p className="mt-2 text-sm text-gray-600">{item.description}</p>
-                <p className="mt-2 text-sm text-gray-600">
-                  Status: {item.status}
-                </p>
-                <p className="mt-2 text-sm text-gray-600">
-                  Value: {item.value}
-                </p>
-              </CardBody>
-            </Card>
+            <RewardCard item={item} />
           </div>
         ))}
       </div>
