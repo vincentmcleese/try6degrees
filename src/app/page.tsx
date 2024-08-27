@@ -33,9 +33,11 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full max-w-5xl mt-24 sm:mt-16 text-center">
-        <h1 className="text-4xl font-bold animate-fadeIn">You're Invited.</h1>
+        <h1 className="text-4xl font-bold animate-fadeIn">
+          You&lsquo;re Invited.
+        </h1>
         <p className="mt-4 text-lg animate-fadeIn">
-          Discover the platform recognizing & rewarding Redditors
+          Discover the platform recognizing &amp; rewarding Redditors
         </p>
       </div>
       <div className="flex flex-col lg:flex-row w-full max-w-5xl mt-8 space-y-4 lg:space-y-0 lg:space-x-4">
