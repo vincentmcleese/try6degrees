@@ -1,21 +1,7 @@
 "use client";
 
-import {
-  CircularProgress,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Button,
-  ButtonGroup,
-  Tabs,
-  Tab,
-  Divider,
-  Chip,
-} from "@nextui-org/react";
-import { CheckIcon } from "@/app/icons/check";
-import { LockIcon } from "@/app/icons/lock";
-
+import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
+import StatusIcon from "@/components/status-icon";
 import Image from "next/image";
 
 interface RewardCardProps {
@@ -35,13 +21,7 @@ const RewardCard: React.FC<RewardCardProps> = ({ item }) => {
       <CardHeader className="font-bold text-lg flex justify-between items-center">
         {item.title}
 
-        <Chip
-          startContent={<LockIcon size={18} />}
-          variant="faded"
-          color="success"
-        >
-          unlocked
-        </Chip>
+        <StatusIcon unlocked={item.unlocked} />
       </CardHeader>
 
       <Divider />
