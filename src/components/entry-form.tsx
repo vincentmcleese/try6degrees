@@ -1,7 +1,8 @@
 "use client";
 import { PopupButton } from "@typeform/embed-react";
-import { Input, Button, Card } from "@nextui-org/react";
+import { Input, Button, Card, CardHeader, CardBody } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { SixdegreesIcon } from "@/app/icons/6degrees.jsx";
 
 export default function EntryForm() {
   const router = useRouter();
@@ -13,17 +14,30 @@ export default function EntryForm() {
   return (
     <>
       <Card>
-        <p className="mt-4 text-lg animate-fadeIn">
-          How can we best notify you about future rewards?
-        </p>
-        <PopupButton
-          id="SumFZWsT"
-          style={{ fontSize: 20 }}
-          className="my-button"
-          onSubmit={handleSubmit}
-        >
-          click to open form in popup
-        </PopupButton>
+        <CardHeader className="flex justify-center">
+          <p className="mt-4 text-lg animate-fadeIn">Accept your invite </p>
+        </CardHeader>
+        <CardBody>
+          <div className="flex justify-center">
+            <PopupButton
+              id="SumFZWsT"
+              style={{
+                fontSize: 20,
+                backgroundColor: "#FF5700",
+                color: "white",
+                display: "flex",
+                alignItems: "center",
+                padding: "10px 20px",
+                borderRadius: "8px",
+              }}
+              className="my-button"
+              onSubmit={handleSubmit}
+            >
+              <SixdegreesIcon style={{ marginRight: "8px" }} />
+              Enter app
+            </PopupButton>
+          </div>
+        </CardBody>
 
         <div id="typeform-container"></div>
       </Card>

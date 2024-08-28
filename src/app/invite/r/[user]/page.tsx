@@ -86,8 +86,10 @@ export default async function Home({ params }: { params: any }) {
         <div className="flex animate-scroll">
           {logos.map((logo, index) => (
             <div key={index} className="flex-shrink-0 w-40 h-40 m-4">
-              <img
+              <Image
                 src={logo}
+                width={200}
+                height={100}
                 alt={`Logo ${index}`}
                 className="object-contain w-full h-full"
               />
