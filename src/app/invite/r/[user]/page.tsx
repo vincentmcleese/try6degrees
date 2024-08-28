@@ -25,17 +25,18 @@ const data = [
 ];
 
 const logos = [
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
-  "/6degrees_black.png",
+  "/logos/typeform.webp",
+  "/logos/retool.webp",
+  "/logos/miro.webp",
+  "/logos/gcp.webp",
+  "/logos/hubspot.webp",
+  "/logos/zendesk.webp",
+  "/logos/openai.webp",
+  "/logos/webflow.webp",
+  "/logos/stripe.webp",
+  "/logos/notion.webp",
+  "/logos/airtable.webp",
+  "/logos/aws.webp",
 ];
 
 export default async function Home({ params }: { params: any }) {
@@ -61,8 +62,8 @@ export default async function Home({ params }: { params: any }) {
           , you&lsquo;re Invited.
         </h1>
         <p className="mt-4 text-lg animate-fadeIn">
-          You are invited because you have been recognized for your authentic
-          content on Reddit.
+          You're one of 100 entrepreneurs chosen for the exclusive 6degrees Beta
+          based on your authentic content on Reddit.
         </p>
       </div>
       <div className="flex flex-col lg:flex-row w-full max-w-5xl mt-12 space-y-4 lg:space-y-0 lg:space-x-4">
@@ -82,22 +83,36 @@ export default async function Home({ params }: { params: any }) {
           subreddit
         </h2>
       </div>
-      <div className="overflow-hidden relative w-screen">
-        <div className="flex animate-scroll">
-          {logos.map((logo, index) => (
-            <div key={index} className="flex-shrink-0 w-40 h-40 m-4">
+
+      <div className="scroll-container mt-12">
+        <div className="scroll-content">
+          {logos.concat(logos).map((logo, index) => (
+            <div key={index}>
               <Image
                 src={logo}
-                width={200}
-                height={100}
+                width={50}
+                height={50}
                 alt={`Logo ${index}`}
-                className="object-contain w-full h-full"
+                className="object-contain w-full h-full filter grayscale opacity-50"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="scroll-content" aria-hidden="true">
+          {logos.concat(logos).map((logo, index) => (
+            <div key={index}>
+              <Image
+                src={logo}
+                width={50}
+                height={50}
+                alt={`Logo ${index}`}
+                className="object-contain w-full h-full filter grayscale opacity-50"
               />
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full max-w-5xl mt-8 p-4  bg-gray-200 p-4 rounded-lg border border-[#FF5700]">
+      <div className="w-full max-w-5xl mt-12 p-4  bg-gray-200 p-4 rounded-lg border border-[#FF5700]">
         <EntryForm />
       </div>
     </main>

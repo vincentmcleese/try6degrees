@@ -54,6 +54,20 @@ body {
   }
 }
 
-.animate-scroll {
-  animation: scroll 10s linear infinite;
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll-content > div {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0 20px; /* Add horizontal margin */
 }
