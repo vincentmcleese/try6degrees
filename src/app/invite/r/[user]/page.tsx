@@ -62,8 +62,8 @@ export default async function Home({ params }: { params: any }) {
           , you&lsquo;re Invited.
         </h1>
         <p className="mt-4 text-lg animate-fadeIn">
-          You're one of 100 entrepreneurs chosen for the exclusive 6degrees Beta
-          based on your authentic content on Reddit.
+          You&apos;re one of 100 entrepreneurs chosen for the exclusive 6degrees
+          Beta based on your authentic content on Reddit.
         </p>
       </div>
       <div className="flex flex-col lg:flex-row w-full max-w-5xl mt-12 space-y-4 lg:space-y-0 lg:space-x-4">

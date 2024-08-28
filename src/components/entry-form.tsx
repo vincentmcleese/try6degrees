@@ -22,8 +22,8 @@ export default function EntryForm() {
       <Card>
         <CardHeader className="flex justify-center">
           <p className="mt-4 text-lg animate-fadeIn">
-            Your spot is reserved—join now and see the offers you'd be eligible
-            for!
+            Your spot is reserved—join now and see the offers you&apos;d be
+            eligible for!
           </p>
         </CardHeader>
         <CardBody>
