@@ -11,7 +11,10 @@ import {
   Tabs,
   Tab,
   Divider,
+  Chip,
 } from "@nextui-org/react";
+import { CheckIcon } from "@/app/icons/check";
+import { LockIcon } from "@/app/icons/lock";
 
 import Image from "next/image";
 
@@ -22,13 +25,24 @@ interface RewardCardProps {
     description: string;
     status: string;
     value: string;
+    unlocked: boolean;
   };
 }
 
 const RewardCard: React.FC<RewardCardProps> = ({ item }) => {
   return (
     <Card className="bg-white shadow-lg rounded-lg" isHoverable={true}>
-      <CardHeader className="font-bold text-lg">{item.title}</CardHeader>
+      <CardHeader className="font-bold text-lg flex justify-between items-center">
+        {item.title}
+
+        <Chip
+          startContent={<LockIcon size={18} />}
+          variant="faded"
+          color="success"
+        >
+          unlocked
+        </Chip>
+      </CardHeader>
 
       <Divider />
       <CardBody>

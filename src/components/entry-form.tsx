@@ -3,12 +3,18 @@ import { PopupButton } from "@typeform/embed-react";
 import { Input, Button, Card, CardHeader, CardBody } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { SixdegreesIcon } from "@/app/icons/6degrees.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function EntryForm() {
   const router = useRouter();
   const handleSubmit = () => {
     console.log("Form submitted successfully");
     router.push("./demo/rewards");
+  };
+  const handlePopupClose = () => {
+    console.log("Form was abandoned without completion. Please try again.");
+    toast("Form was abandoned without completion. Please try again.");
   };
 
   return (
@@ -32,6 +38,7 @@ export default function EntryForm() {
               }}
               className="my-button"
               onSubmit={handleSubmit}
+              onClose={handlePopupClose}
             >
               <SixdegreesIcon style={{ marginRight: "8px" }} />
               Enter app
@@ -40,6 +47,7 @@ export default function EntryForm() {
         </CardBody>
 
         <div id="typeform-container"></div>
+        <ToastContainer />
       </Card>
     </>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { Button, ButtonGroup, Avatar } from "@nextui-org/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -20,9 +20,16 @@ export default function Rewards() {
           <Image
             src="/6degrees_black.png"
             alt="6 Degrees Logo"
-            width={150} // Adjust the width as needed
-            height={50} // Adjust the height as needed
+            width={150}
+            height={50}
           />
+        </div>
+        <div className=" left-0 top-0 flex w-full justify-center border border-[#FF5700] bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+          <Avatar onClick={notify} />
+          <div className="ml-4">
+            <p> Level 2</p>
+            <p> Username </p>
+          </div>
         </div>
       </div>
       <div className="flex w-full flex-col mt-8">
@@ -37,6 +44,9 @@ export default function Rewards() {
             </Button>
           ))}
         </ButtonGroup>
+      </div>
+      <div className="w-full max-w-5xl mt-8 p-4  bg-gray-200 p-4 rounded-lg border border-[#FF5700]">
+        Explanation about the level and status here.{" "}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 w-full max-w-5xl">
         {filteredData.map((item, index) => (
@@ -57,6 +67,7 @@ const data = [
     status: "1",
     description: "This is the description for card 1.",
     value: "$100",
+    unlocked: true,
   },
   {
     title: "Card 2",
@@ -64,6 +75,7 @@ const data = [
     status: "1",
     description: "This is the description for card 2.",
     value: "$150",
+    unlocked: true,
   },
   {
     title: "Card 3",
@@ -71,6 +83,7 @@ const data = [
     status: "1",
     description: "This is the description for card 3.",
     value: "$200",
+    unlocked: true,
   },
   {
     title: "Card 4",
@@ -78,6 +91,7 @@ const data = [
     status: "2",
     description: "This is the description for card 4.",
     value: "$250",
+    unlocked: true,
   },
   {
     title: "Card 5",
@@ -85,6 +99,7 @@ const data = [
     status: "2",
     description: "This is the description for card 5.",
     value: "$300",
+    unlocked: true,
   },
   {
     title: "Card 6",
@@ -92,6 +107,7 @@ const data = [
     status: "2",
     description: "This is the description for card 6.",
     value: "$350",
+    unlocked: true,
   },
   {
     title: "Card 7",
@@ -99,6 +115,7 @@ const data = [
     status: "3",
     description: "This is the description for card 7.",
     value: "$400",
+    unlocked: false,
   },
   {
     title: "Card 8",
@@ -106,6 +123,7 @@ const data = [
     status: "3",
     description: "This is the description for card 8.",
     value: "$450",
+    unlocked: false,
   },
   {
     title: "Card 9",
@@ -113,6 +131,7 @@ const data = [
     status: "3",
     description: "This is the description for card 9.",
     value: "$500",
+    unlocked: false,
   },
 ];
 
