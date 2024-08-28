@@ -10,6 +10,10 @@ import RewardCard from "@/components/reward-card";
 export default function Rewards() {
   const [selectedStatus, setSelectedStatus] = useState("1");
   const filteredData = data.filter((item) => item.status === selectedStatus);
+  const selectedButton = buttons.find(
+    (button) => button.status === selectedStatus
+  );
+
   const notify = () =>
     toast("This is a demo. We will notify you once we're live!");
 
@@ -28,7 +32,7 @@ export default function Rewards() {
           <Avatar onClick={notify} />
           <div className="ml-4">
             <p> Level 2</p>
-            <p> Username </p>
+            <p> r/entrepreneurship </p>
           </div>
         </div>
       </div>
@@ -46,7 +50,11 @@ export default function Rewards() {
         </ButtonGroup>
       </div>
       <div className="w-full max-w-5xl mt-8 p-4  bg-gray-200 p-4 rounded-lg border border-[#FF5700]">
-        Explanation about the level and status here.{" "}
+        {selectedButton ? (
+          <p>{selectedButton.description}</p>
+        ) : (
+          <p>No description available for the selected status.</p>
+        )}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 w-full max-w-5xl">
         {filteredData.map((item, index) => (
@@ -136,7 +144,22 @@ const data = [
 ];
 
 const buttons = [
-  { label: "Level 1", status: "1" },
-  { label: "Level 2", status: "2" },
-  { label: "Level 3", status: "3" },
+  {
+    label: "Level 1",
+    status: "1",
+    description:
+      "Level 1 is a general audience of Redditors. To unlock this you must have occasional activity and post meaninfgul comments. ",
+  },
+  {
+    label: "Level 2",
+    status: "2",
+    description:
+      "Level 2 means you are a micro-influencer in your subreddit. Your content is very valuable and is helping thousands of fellow Redditors.",
+  },
+  {
+    label: "Level 3",
+    status: "3",
+    description:
+      "Level 3 means you are in the top 1% most influetial Redditors in your subreddit. You are an extremely powerful voice and your content is helping hundreds of thousands of Redditors.",
+  },
 ];
