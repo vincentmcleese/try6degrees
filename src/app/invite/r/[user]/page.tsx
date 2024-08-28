@@ -61,7 +61,7 @@ export default async function Home({ params }: { params: any }) {
           , you&lsquo;re Invited.
         </h1>
         <p className="mt-4 text-lg animate-fadeIn">
-          You are invited because you have been recongized for your authentic
+          You are invited because you have been recognized for your authentic
           content on Reddit.
         </p>
       </div>
